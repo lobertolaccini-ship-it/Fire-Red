@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon Fire Red - Web RPG Remake</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+      color: #f1f5f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    header {
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ff4757;
+      text-shadow: 0 0 10px rgba(255, 71, 87, 0.4);
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    #game-container {
+      position: relative;
+      padding: 10px;
+      background: #1e293b;
+      border: 4px solid #334155;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 71, 87, 0.15);
+    }
+
+    canvas {
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -webkit-crisp-edges;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      display: block;
+      border-radius: 4px;
+      background-color: #000;
+    }
+
+    .instructions {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .key-badge {
+      background: #334155;
+      border: 1px solid #475569;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-family: monospace;
+      color: #38bdf8;
+      font-weight: bold;
+    }
+  </style>
+  <!-- Carregamento do Phaser 3 Engine via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Pokémon Fire Red JS</h1>
+    <p class="subtitle">Engine Modular 2D &bull; Movimentação Grid-Based (Tile-by-Tile)</p>
+  </header>
+
+  <div id="game-container"></div>
+
+  <div class="instructions">
+    <span>Movimentação: <span class="key-badge">Setas</span> ou <span class="key-badge">W, A, S, D</span></span>
+    <span>Corrida: Segure <span class="key-badge">Shift</span></span>
+  </div>
+
+  <!-- Ponto de Entrada da Aplicação -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
